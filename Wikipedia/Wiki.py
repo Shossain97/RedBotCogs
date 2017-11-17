@@ -19,11 +19,10 @@ class Wiki:
     async def wiki(self, *, request : str):
         """Search Wikipedia's massive database"""
         try:
-            answer=wikipedia.summary(request)
+            answer=wikipedia.summary(request, sentences=5)
             await self.bot.say(answer)
         except:
             await self.bot.say("no results")
-        #insert wikipedia connection code
 
 def setup(bot):
     if exists:
